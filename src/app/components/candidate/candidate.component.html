@@ -1,0 +1,76 @@
+<div *ngIf="candDetails | async as details">
+    <div class="candidateDetails">
+    <mat-card>
+        <mat-card-title>
+            Candidate Name : {{details.name}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            Challenges Solved : {{details.challengesSolved}}   
+            Expertise Level : {{details.candidateExpertiseLevel}}
+        </mat-card-subtitle>
+        <mat-card-content>
+            <h1>Votes : {{details.votes}}</h1> 
+                <br>
+            Expert In (Rating out of 5):
+            <li>Java : {{details.expertIn.java}}</li>
+            <li>Python : {{details.expertIn.python}}</li>
+            <li>Data Structures : {{details.expertIn.DataStructures}}</li>
+            <li>Algorithms : {{details.expertIn.Algorithms}}</li>
+            <li>C++ : {{details.expertIn.Cpp}}</li>        
+        </mat-card-content>
+    </mat-card>
+</div>
+<div>
+    <mat-form-field>
+        <mat-label>Admin Code</mat-label>
+        <input matInput type="text" [(ngModel)]="key">
+    </mat-form-field>
+    <button mat-button (click)="deletecandidate(details._id)" [disabled]="!key"><mat-icon>delete</mat-icon>Delete</button>
+</div>
+<div class="createcandformfield">
+    <mat-form-field appearance="outline">
+        <mat-label>Candidate Key</mat-label>
+        <input matInput type="text" [(ngModel)]="candkey">
+    </mat-form-field>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Candidate Name</mat-label>
+            <input matInput type="text" [(ngModel)]="Updatecand.name">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Challenges Solved</mat-label>
+            <input matInput type="number" [(ngModel)]="Updatecand.challengesSolved">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Candidate Expertise Level</mat-label>
+            <input matInput type="number" [(ngModel)]="Updatecand.candidateExpertiseLevel">
+        </mat-form-field>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Java</mat-label>
+                <input matInput type="number" [(ngModel)]="Updatecand.expertIn.java">
+            </mat-form-field>               
+            <mat-form-field appearance="outline">
+                <mat-label>Python</mat-label>
+                <input matInput type="number" [(ngModel)]="Updatecand.expertIn.python">
+            </mat-form-field>               
+            <mat-form-field appearance="outline">
+                <mat-label>Data Structures</mat-label>
+                <input matInput type="number" [(ngModel)]="Updatecand.expertIn.DataStructures">
+            </mat-form-field>               
+            <mat-form-field appearance="outline">
+                <mat-label>Algorithms</mat-label>
+                <input matInput type="number" [(ngModel)]="Updatecand.expertIn.Algorithms">
+            </mat-form-field>               
+            <mat-form-field appearance="outline">
+                <mat-label>C++</mat-label>
+                <input matInput type="number" [(ngModel)]="Updatecand.expertIn.Cpp">
+            </mat-form-field>               
+        </div>
+    </div>
+    <button mat-button (click)="updateCand(candDetails.candidateId)">Update</button>
+</div>
+
+</div>

@@ -1,0 +1,10 @@
+
+<div *ngFor="let c of candidates | async" class="candidateslist">
+    <mat-card (click)="redirectCandidate(c._id)">
+        <mat-card-title>{{c.name}}</mat-card-title>
+        <mat-card-content>
+           click to view details
+        </mat-card-content>
+    </mat-card>
+    <button mat-raised-button (click)="Vote(c._id)">Vote</button>
+</div> 

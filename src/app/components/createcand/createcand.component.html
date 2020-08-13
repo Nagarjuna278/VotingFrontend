@@ -1,0 +1,50 @@
+<div>
+    <mat-form-field appearance="outline">
+        <mat-label>Admin Code</mat-label>
+        <input matInput type="text" [(ngModel)]="key">
+    </mat-form-field>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Candidate Id/Code</mat-label>
+            <input matInput type="text" [(ngModel)]="newcandidate.candidateId">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Candidate Name</mat-label>
+            <input matInput type="text" [(ngModel)]="newcandidate.name">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Challenges Solved</mat-label>
+            <input matInput type="number" [(ngModel)]="newcandidate.challengesSolved">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Candidate Expertise Level</mat-label>
+            <input matInput type="number" [(ngModel)]="newcandidate.candidateExpertiseLevel">
+        </mat-form-field>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Java</mat-label>
+                <input matInput type="number" [(ngModel)]="newcandidate.expertIn.java">
+            </mat-form-field>               
+            <mat-form-field appearance="outline">
+                <mat-label>Python</mat-label>
+                <input matInput type="number" [(ngModel)]="newcandidate.expertIn.python">
+            </mat-form-field>               
+            <mat-form-field appearance="outline">
+                <mat-label>Data Structures</mat-label>
+                <input matInput type="number" [(ngModel)]="newcandidate.expertIn.DataStructures">
+            </mat-form-field>               
+            <mat-form-field appearance="outline">
+                <mat-label>Algorithms</mat-label>
+                <input matInput type="number" [(ngModel)]="newcandidate.expertIn.Algorithms">
+            </mat-form-field>               
+            <mat-form-field appearance="outline">
+                <mat-label>C++</mat-label>
+                <input matInput type="number" [(ngModel)]="newcandidate.expertIn.Cpp">
+            </mat-form-field>               
+        </div>
+    </div>
+    <button mat-button (click)="createcandidate()" [disabled]="!newcandidate.name">Create</button>
+</div>

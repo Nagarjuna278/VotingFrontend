@@ -1,0 +1,19 @@
+ .candidateslist{
+     display: inline-flex;
+     padding: 1%;
+     text-align: center;
+     mat-card{
+         box-shadow: none;
+         width:250px;
+     }
+     button{
+         &:hover{
+             background-color: green;
+             color:white;
+         }
+     }
+     &:hover{
+        box-shadow: 0 10px 10px gray,0 0 10px gray;
+    }
+
+ } 
